@@ -1,4 +1,4 @@
-config_file_path="./config.yaml"
+config_file_path="/opt/rdpgw/rdpgw.yaml"
 
 ROUND_ROBIN=$(echo "${ROUND_ROBIN}" | tr A-Z a-z)
 if [ "${ROUND_ROBIN}" != "true" ]
