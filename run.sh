@@ -55,6 +55,26 @@ Server:
   - xrdp:3389 
 EOF
 
+gen_hosts () {
+    ALLOWED_HOSTS=$(echo "${ALLOWED_HOSTS}" | sed -e 's~^[ \t]*~~;s~[ \t]*$~~')
+    if [ ! -z "${ALLOWED_HOSTS}" ]; then
+    	#IFS=',' read -ra hosts_list <<< "${ALLOWED_HOSTS}"
+    	echo " Hosts:" >> "${config_file_path}"
+    	sec="\n  - "
+    	output=$(echo "  - $ALLOWED_HOSTS" | sed 's/,/\n  - /g' )
+    	echo "$output"
+
+    	#echo "${ALLOWED_HOSTS/,/$sec}"
+    	#>> "${config_file_path}"
+
+    else
+    	echo "::: ALLOWED_HOSTS not defined"
+    fi
+}
+
+gen_hosts
+
+
 check_auth () {
     if [ "${AUTH}" = "LOCAL" ]; then
         cat >> "${config_file_path}" <<-EOF
