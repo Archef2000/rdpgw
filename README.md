@@ -57,7 +57,7 @@ docker run -d \
 |`OIDC_ID`|yes||`OIDC_ID="rdpgw"`|
 |`OIDC_SEC`|yes||`OIDC_SEC="01cd304c-6f43-4480-9479-618eb6fd578f"`|
 |`GW_ADD`|yes||`GW_ADD=localhost:9443`|
-|`ALLOWED_HOSTS`|yes||`ALLOWED_HOSTS="xrdp:3389,xrdp2:3389"|
+|`ALLOWED_HOSTS`|yes||`ALLOWED_HOSTS="xrdp:3389,xrdp2:3389"`|
 |`LISTEN_PORT`|no||`LISTEN_PORT=9443`|
 |`AUTH`|no||`AUTH=OIDC`|
 
