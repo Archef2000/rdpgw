@@ -27,20 +27,24 @@ if [ -z "${LISTEN_PORT}" ] ; then
 fi
 
 check_keys () {
-    if [ -z "${PAA_SIG}" ] || [ ${#PAA_SIG} -eq 32 ] ; then 
+    if [ ${#PAA_SIG} -eq 32 ] ; then 
         PAA_SIG=$( tr -dc A-Za-z0-9 </dev/urandom | head -c 32 )
+        echo "::: generated PAATokenSigningKey as PAA_SIG=${PAA_SIG}"
     fi
     
-    if [ -z "${PAA_ENC}" ] || [ ${#PAA_ENC} -eq 32 ] ; then 
+    if [ ${#PAA_ENC} -eq 32 ] ; then 
         PAA_ENC=$( tr -dc A-Za-z0-9 </dev/urandom | head -c 32 )
+        echo "::: generated PAATokenEncryptionKey as PAA_ENC=${PAA_ENC}"
     fi
 
-    if [ -z "${SES_KEY}" ] || [ ${#SES_KEY} -eq 32 ] ; then 
+    if [ ${#SES_KEY} -eq 32 ] ; then 
         SES_KEY=$( tr -dc A-Za-z0-9 </dev/urandom | head -c 32 )
+        echo "::: generated SessionKey as SES_KEY=${SES_KEY}"
     fi
     
-    if [ -z "${SES_ENC}" ] || [ ${#SES_ENC} -eq 32 ] ; then 
+    if [ ${#SES_ENC} -eq 32 ] ; then 
         SES_ENC=$( tr -dc A-Za-z0-9 </dev/urandom | head -c 32 )
+        echo "::: generated SessionEncryptionKey as SES_ENC=${SES_ENC}"
     fi
 }
 
@@ -54,7 +58,7 @@ Client:
  ConnectionType: 6
 Security:
   PAATokenSigningKey: ${PAA_SIG}
-  paatokenencryptionkey: ${PAA_ENC}
+  PAATokenEncryptionKey: ${PAA_ENC}
 Server:
  CertFile: /opt/rdpgw/server.pem
  KeyFile: /opt/rdpgw/key.pem
@@ -102,5 +106,4 @@ EOF
 }
 
 check_auth
-cat /opt/rdpgw/rdpgw.yaml
 exec /opt/rdpgw/rdpgw
