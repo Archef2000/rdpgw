@@ -45,21 +45,21 @@ docker run -d \
 	archef2000/rdpgw
 ```
 
-# Variables
+# Variables,
 ## Environment Variables
 | Variable | Required | Function | Example |
 |----------|----------|----------|----------|
-|``|yes||`SES_KEY=thisisasessionkeyreplacethisjetzt`|
-|``|yes||`SES_ENC=thisisasessionkeyreplacethisnunu!`|
-|``|yes||`PAA_SIG=thisisasessionkeyreplacethisjetzt`|
-|``|yes||`PAA_ENC=thisisasessionkeyreplacethisjetzt`|
-|``|yes||`OIDC_URL="http://keycloak:8080/auth/realms/rdpgw"`|
-|``|yes||`OIDC_ID="rdpgw"`|
-|``|yes||`OIDC_SEC="01cd304c-6f43-4480-9479-618eb6fd578f"`|
-|``|yes||`GW_ADD=localhost:9443`|
-|``|yes||`ALLOWED_HOSTS="xrdp:3389,xrdp2:3389"|
-|``|no||`LISTEN_PORT=9443`|
-|``|no||`AUTH=OIDC`|
+|`SES_KEY`|yes|Sets the SessionKey in the config file.|`SES_KEY=thisisasessionkeyreplacethisjetzt`|
+|`SES_ENC`|yes||`SES_ENC=thisisasessionkeyreplacethisnunu!`|
+|`PAA_SIG`|yes||`PAA_SIG=thisisasessionkeyreplacethisjetzt`|
+|`PAA_ENC`|yes||`PAA_ENC=thisisasessionkeyreplacethisjetzt`|
+|`OIDC_URL`|yes||`OIDC_URL="http://keycloak:8080/auth/realms/rdpgw"`|
+|`OIDC_ID`|yes||`OIDC_ID="rdpgw"`|
+|`OIDC_SEC`|yes||`OIDC_SEC="01cd304c-6f43-4480-9479-618eb6fd578f"`|
+|`GW_ADD`|yes||`GW_ADD=localhost:9443`|
+|`ALLOWED_HOSTS`|yes||`ALLOWED_HOSTS="xrdp:3389,xrdp2:3389"|
+|`LISTEN_PORT`|no||`LISTEN_PORT=9443`|
+|`AUTH`|no||`AUTH=OIDC`|
 
 ## Ports
 | Port | Proto | Required | Function | Example |
