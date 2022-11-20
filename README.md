@@ -50,12 +50,12 @@ docker run -d \
 | Variable | Required | Function | Example |
 |----------|----------|----------|----------|
 |`SES_KEY`|yes|Sets the SessionKey in the config file.|`SES_KEY=thisisasessionkeyreplacethisjetzt`|
-|`SES_ENC`|yes||`SES_ENC=thisisasessionkeyreplacethisnunu!`|
-|`PAA_SIG`|yes||`PAA_SIG=thisisasessionkeyreplacethisjetzt`|
-|`PAA_ENC`|yes||`PAA_ENC=thisisasessionkeyreplacethisjetzt`|
-|`OIDC_URL`|yes||`OIDC_URL="http://keycloak:8080/auth/realms/rdpgw"`|
-|`OIDC_ID`|yes||`OIDC_ID="rdpgw"`|
-|`OIDC_SEC`|yes||`OIDC_SEC="01cd304c-6f43-4480-9479-618eb6fd578f"`|
+|`SES_ENC`|yes|Sets the SessionEncryptionKey in the config file.|`SES_ENC=thisisasessionkeyreplacethisnunu!`|
+|`PAA_SIG`|yes|Sets the PAATokenSigningKey in the config file.|`PAA_SIG=thisisasessionkeyreplacethisjetzt`|
+|`PAA_ENC`|yes|Sets the PAATokenEncryptionKey in the config file.|`PAA_ENC=thisisasessionkeyreplacethisjetzt`|
+|`OIDC_URL`|yes|If AUTH is set to OIDC this sets the AUTH entpoint.|`OIDC_URL="http://keycloak:8080/auth/realms/rdpgw"`|
+|`OIDC_ID`|yes|OIDC Client ID.|`OIDC_ID="rdpgw"`|
+|`OIDC_SEC`|yes|OIDC AUTH secret.|`OIDC_SEC="01cd304c-6f43-4480-9479-618eb6fd578f"`|
 |`GW_ADD`|yes||`GW_ADD=localhost:9443`|
 |`ALLOWED_HOSTS`|yes||`ALLOWED_HOSTS="xrdp:3389,xrdp2:3389"`|
 |`LISTEN_PORT`|no||`LISTEN_PORT=9443`|
