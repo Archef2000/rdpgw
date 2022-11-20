@@ -27,22 +27,22 @@ if [ -z "${LISTEN_PORT}" ] ; then
 fi
 
 check_keys () {
-    if [ ${#PAA_SIG} -eq 32 ] ; then 
+    if [ ${#PAA_SIG} -ne 32 ] ; then 
         PAA_SIG=$( tr -dc A-Za-z0-9 </dev/urandom | head -c 32 )
         echo "::: generated PAATokenSigningKey as PAA_SIG=${PAA_SIG}"
     fi
     
-    if [ ${#PAA_ENC} -eq 32 ] ; then 
+    if [ ${#PAA_ENC} -ne 32 ] ; then 
         PAA_ENC=$( tr -dc A-Za-z0-9 </dev/urandom | head -c 32 )
         echo "::: generated PAATokenEncryptionKey as PAA_ENC=${PAA_ENC}"
     fi
 
-    if [ ${#SES_KEY} -eq 32 ] ; then 
+    if [ ${#SES_KEY} -ne 32 ] ; then 
         SES_KEY=$( tr -dc A-Za-z0-9 </dev/urandom | head -c 32 )
         echo "::: generated SessionKey as SES_KEY=${SES_KEY}"
     fi
     
-    if [ ${#SES_ENC} -eq 32 ] ; then 
+    if [ ${#SES_ENC} -ne 32 ] ; then 
         SES_ENC=$( tr -dc A-Za-z0-9 </dev/urandom | head -c 32 )
         echo "::: generated SessionEncryptionKey as SES_ENC=${SES_ENC}"
     fi
