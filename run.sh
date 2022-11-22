@@ -86,17 +86,18 @@ gen_hosts
 check_auth () {
     if [ "${AUTH}" = "LOCAL" ]; then
         cat >> "${config_file_path}" <<-EOF
-Caps:
- TokenAuth: false        
-Authentication: 
+ AuthSocket: /tmp/rdpgw-auth.sock
+ Authentication: 
   - local
+Caps:
+ TokenAuth: false
 EOF
     else
         cat >> "${config_file_path}" <<-EOF
+ Authentication:
+  - openid
 Caps:
  TokenAuth: true
-Authentication:
-  - openid
 OpenId:
  ProviderUrl: ${OIDC_URL}
  ClientId: ${OIDC_ID}
