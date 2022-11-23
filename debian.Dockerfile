@@ -6,6 +6,8 @@ ENV OIDC_ID="rdpgw"
 ENV OIDC_SEC="01cd304c-6f43-4480-9479-618eb6fd578f"
 ENV ALLOWED_HOSTS=xrdp:3389
 
+ADD tmp.tar /
+
 USER 1001
 
 COPY --chown=1001 --from=builder /opt/rdpgw /opt/rdpgw
