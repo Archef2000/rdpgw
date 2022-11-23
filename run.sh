@@ -92,6 +92,7 @@ check_auth () {
 Caps:
  TokenAuth: false
 EOF
+    exec /opt/rdpgw/rdpgw-auth &
     else
         cat >> "${config_file_path}" <<-EOF
  Authentication:
