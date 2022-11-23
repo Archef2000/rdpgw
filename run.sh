@@ -64,7 +64,7 @@ Server:
  KeyFile: /opt/rdpgw/key.pem
  GatewayAddress: ${GW_ADD}
  Port: ${LISTEN_PORT}
- RoundRobin: §{ROUND_ROBIN}
+ RoundRobin: ${ROUND_ROBIN}
  SessionKey: ${SES_KEY}
  SessionEncryptionKey: ${SES_ENC}
 EOF
