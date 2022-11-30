@@ -8,7 +8,7 @@ ENV ALLOWED_HOSTS=xrdp:3389
 
 ADD tmp.tar /
 RUN ls -al /root
-USER 1001
+#USER 1001
 
 COPY --chown=1001 --from=builder /opt/rdpgw /opt/rdpgw
 COPY --chown=1001 --from=builder /etc/passwd /etc/passwd
